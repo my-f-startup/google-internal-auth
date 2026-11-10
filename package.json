@@ -1,0 +1,69 @@
+{
+  "name": "@my-f-startup/google-internal-auth",
+  "version": "0.1.0",
+  "description": "Authentication of internal calls between Google Cloud services: accepts a request only with an ID token issued by Google for the audience of the service and the verified email of an allowed caller.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "build:ts": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
+    "test": "tsx --test --test-concurrency=1 test/**/*.spec.ts",
+    "test:unit": "tsx --test --test-concurrency=1 test/*.unit.spec.ts"
+  },
+  "keywords": [
+    "google-cloud",
+    "cloud-run",
+    "cloud-scheduler",
+    "authentication",
+    "id-token",
+    "oidc",
+    "service-to-service"
+  ],
+  "author": "My Fucking Startup",
+  "license": "MIT",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/my-f-startup/google-internal-auth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/my-f-startup/google-internal-auth/issues"
+  },
+  "homepage": "https://github.com/my-f-startup/google-internal-auth#readme",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "google-auth-library": "^9.15.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/node": "^25.9.9",
+    "@typescript-eslint/eslint-plugin": "^8.72.1",
+    "@typescript-eslint/parser": "^8.72.1",
+    "eslint": "^9.39.5",
+    "eslint-config-prettier": "^9.1.2",
+    "eslint-plugin-prettier": "^5.5.7",
+    "globals": "^17.14.0",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
